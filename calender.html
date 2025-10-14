@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendar</title>
+  <style>
+    .selection {
+      text-align: center;
+      margin-bottom: 2em;
+      background-color: rgb(174, 179, 181);
+      width: 100%;
+    }
+    #year_get,
+    #month_get {
+      padding: 5px;
+      width: 75%;
+    }
+    input {
+      padding: 5px;
+    }
+    .tabselection {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+    table {
+      padding: 5px;
+    }
+    .selrow {
+      border: none;
+    }
+    td,
+    th {
+      padding: 10px;
+      border: 1px solid black;
+      text-align: center;
+    }
+    .selcol {
+      padding: 0px;
+      border: none;
+      text-align: center;
+    }
+    #calender {
+      border-collapse: collapse;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #resetbtn {
+      background-color: red;
+      border: none;
+      color: white;
+    }
+    #subtn {
+      background-color: green;
+      border: none;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="selection">
+    <table class="tabselection" cellspacing="10">
+      <tbody>
+        <tr class="selrow">
+          <td class="selcol">
+            <input id="year_get" type="number" placeholder="year" />
+          </td>
+          <td class="selcol">
+            <input id="month_get" type="number" placeholder="month" />
+          </td>
+        </tr>
+        <tr class="selrow">
+          <td colspan="2" class="selcol">
+            <input onclick="generate()" type="button" id="subtn" value="Generate Calendar" />
+          </td>
+        </tr>
+        <tr class="selrow">
+          <td colspan="2" class="selcol">
+            <input type="reset" value="Reset" id="resetbtn" onclick="location.reload();" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="content"></div>
+
+  <script>
+    function generate() {
+      var year_get = parseInt(document.getElementById("year_get").value);
+      var month_get = parseInt(document.getElementById("month_get").value) - 1;
+
+      if (isNaN(year_get) || isNaN(month_get) || month_get < 0 || month_get > 11) {
+        alert("Please enter a valid year and month (1–12).");
+        return;
+      }
+
+      var date = new Date(year_get, month_get, 1);
+      var init_content = "<table id='calender'>";
+      init_content += "<tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr>";
+
+      var firstDay = date.getDay();
+
+      // Add empty cells before the first date
+      for (var i = 0; i < firstDay; i++) {
+        init_content += "<td></td>";
+      }
+
+      // Fill the calendar days
+      while (date.getMonth() === month_get) {
+        init_content += "<td>" + date.getDate() + "</td>";
+
+        // If Saturday, close the row and start a new one
+        if (date.getDay() === 6) {
+          init_content += "</tr>";
+          // Only add new <tr> if it's not the end of the month
+          if (new Date(year_get, month_get, date.getDate() + 1).getMonth() === month_get) {
+            init_content += "<tr>";
+          }
+        }
+
+        date.setDate(date.getDate() + 1);
+      }
+
+      // If the last row is not complete, fill the remaining cells
+      var lastDay = (date.getDay() + 6) % 7; // Day after last day shown
+      if (lastDay !== 6) {
+        for (var i = date.getDay(); i <= 6 && i !== 0; i++) {
+          init_content += "<td></td>";
+        }
+        init_content += "</tr>";
+      }
+
+      init_content += "</table>";
+      document.getElementById("content").innerHTML = init_content;
+    }
+  </script>
+</body>
+</html>
+
