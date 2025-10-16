@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouseover Example</title>
+    <style>
+        #heading2 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="content" id="content">
+        <!-- Use relative path or ensure image is accessible in project directory -->
+        <img src="quote1.jpg" id="image" width="300"><br><br>
+
+        <div class="data">
+            <h1 id="heading1">Over mouse here...</h1>
+            <h1 id="heading2">Hi Hello World</h1>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("content").addEventListener("mouseover", change1);
+        document.getElementById("content").addEventListener("mouseout", change2);
+
+        function change1() {
+            document.getElementById("image").src = "quote2.jpg";
+            document.getElementById("heading1").style.display = "none";
+            document.getElementById("heading2").style.display = "block";
+        }
+
+        function change2() {
+            document.getElementById("image").src = "quote1.jpg"; // Make sure this image exists
+            document.getElementById("heading1").style.display = "block";
+            document.getElementById("heading2").style.display = "none";
+        }
+    </script>
+</body>
+</html>
