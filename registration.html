@@ -1,0 +1,118 @@
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <h1 style="text-align: center; color: rgb(0, 0, 0);">REGISTRATION FORM</h1>
+    <form><br>
+        
+
+        
+                NAME
+                <td colspan="2"><input type="text"></td><br><br>
+        
+                AGE
+                <select>
+                        <option>SELECT</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                        <option>24</option>
+                    </select></td><br><br>
+            </tr>
+
+            </tr>
+            <tr>
+                <td rowspan="1">PHONE NUMBER</td>
+                </tr>
+            <tr>
+                <td><input type="text"></td>
+                <td colspan="1"><input type="text"></td>
+            </tr><br><br>
+            <tr>
+                <td>LANGUAGES KNOW</td>
+                <td colspan="2"><input type="checkbox">MALAYALAM
+                    <input type="checkbox">ENGLISH
+                    <input type="checkbox">HINDI
+                </td><br><br>
+            </tr>
+            <tr>
+            <td>DATE OF BIRTH</td>
+            <td colspan="2">
+                <label for="dob"></label>
+                <input type="date" id="dob" name="dob">
+            </td>
+        </tr><br><br>
+
+            <tr>
+                <td>EMAIL ID</td>
+                <td colspan="2"><input type="email">
+            </tr><br><br>
+            <tr>
+                <td>PASSWORD</td>
+                <td colspan="2"><input type="password"></td>
+            </tr><br><br>
+            <tr>
+                <td>RETYPE PASSWORD</td>
+                <td colspan="2"><input type="password"></td>
+            </tr><br><br>
+            <tr>
+                <td rowspan="4">SELECT YOUR SECURITY QUESTION</td><br><br>
+                <td colspan="2"><input type="radio" name="security">What is your pet name?</td>
+            </tr><br>
+            <tr>
+                <td colspan="2"><input type="radio" name="security">Who is your best friend?</td>
+            </tr><br>
+            <tr>
+                <td colspan="2"><input type="radio" name="security">What is your favourite color?</td>
+            </tr><br>
+            <tr>
+                <td colspan="2"><input type="radio" name="security">Who is your favourite teacher?</td>
+            </tr><br><br>
+
+
+            <tr>
+                <td>UPLOAD CV</td>
+                <td colspan="2"><input type="file"></td>
+            </tr><br><br>
+            <tr>
+                <td style="text-align:center;"><button onclick="handleClickon()"><input type="reset"
+                            style="background-color:red;color:white; padding: 6px 12px; border:1px solid transparent;"></button>
+                </td>
+                <td colspan="2" style="text-align:center;"><button onclick="handleClick()"><input type="submit"
+                            style="background-color:green;color:rgb(255, 255, 255);padding: 6px 12px;border: 1px solid transparent;"></button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <style>
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <script>
+        function handleClick() {
+            alert("Registration Completed");
+        }
+        function handleClickon() {
+            alert("Reseted Successfully");
+        }
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById("dob").setAttribute("max", today);
+    </script>
+</body>
+
+
+</html>
