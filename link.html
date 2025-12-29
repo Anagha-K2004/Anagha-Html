@@ -1,0 +1,150 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>link pages using a tag</title>
+</head>
+<body style="background-image: url('https://i.ytimg.com/vi/yKuTkOqHkVQ/maxresdefault.jpg'); 
+             background-size: cover; 
+             background-repeat: no-repeat; 
+             background-attachment: fixed;">
+             <div class="menu-bar" onclick="toggleMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+<div>
+            
+                <ul class="nav-links" id="menu" >
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+    <center><marquee><h1 class="marquee">Master Of Computer Application</h1></marquee>
+        <br>
+        
+    </center>
+  
+        
+            <br>
+        <center><h2>To know more about MCA </h2></center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+     
+
+
+<script>
+  function toggleMenu() {
+    let menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+  }
+</script>
+
+        <style>
+            .marquee {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: scroll 1s linear infinite;
+      font-size: 40px;
+      font-weight: bold;
+      animation: colorchange 3s infinite alternate;
+    }
+
+    
+    @keyframes scroll {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    
+    @keyframes colorchange {
+      0%   { color: red; }
+      25%  { color: blue; }
+      50%  { color: green; }
+      75%  { color: orange; }
+      100% { color: purple; }
+    }
+    h2{
+        display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: scroll 1s linear infinite;
+      font-size: 40px;
+      font-weight: bold;
+      animation: colorchange 3s infinite alternate;
+    }
+
+    
+    @keyframes scroll {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    
+    @keyframes colorchange {
+      0%   { color: red; }
+      25%  { color: blue; }
+      50%  { color: green; }
+      75%  { color: orange; }
+      100% { color: purple; }
+    
+    }
+           
+            a {
+                
+      text-decoration: none;   
+      font-family: Arial, sans-serif;
+      font-size: 18px;        
+      color: rgb(255, 0, 0);         
+    }
+           .menu-bar {
+      width: 30px;
+      cursor: pointer;
+    }
+
+    .bar {
+      height: 4px;
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    .nav-links {
+      display: none; 
+      list-style: none;
+      padding: 0;
+    }
+
+    .nav-links li {
+      padding: 10px;
+      /*background: lightgray;*/
+      margin: 5px 0;
+    }
+        </style>
+</body>
+</html>
